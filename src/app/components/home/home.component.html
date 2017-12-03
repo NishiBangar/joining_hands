@@ -1,0 +1,107 @@
+
+<div class="container-fluid">
+	<form>
+		<div class="row">
+			<div class="col-sm-6 col-xs-6">
+				<div class="form-group ">
+					<label>First Name</label>
+					<input type="text" class = "form-control  " [(ngModel)] = "vol.firstName" name="firstName">
+				</div>	
+			</div>
+
+			<div class="col-sm-6 col-xs-6">
+				<div class="form-group">
+					<label>Last Name</label>
+					<input type="text" class = "form-control  " [(ngModel)] = "vol.lastName" name="lastName">
+				</div>	
+			</div>	
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6 col-xs-6">
+				<label>Address</label>
+				<div class="row">
+					<div class="form-group col-sm-12 col-xs-12 ">
+						<label>Country</label>
+						<input type="text" class = "form-control  " [(ngModel)] = "vol.addresss.country" name="country">
+					</div>	
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-12 col-xs-12 ">
+						<label>State</label>
+						<input type="text" class = "form-control  " [(ngModel)] = "vol.addresss.state" name="state">
+					</div>	
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-7 col-xs-7">
+						<label>City</label>
+						<input type="text" class = "form-control  " [(ngModel)] = "vol.addresss.city" name="city">
+					</div>	
+					<div class="form-group col-sm-5 col-xs-5">
+						<label>Zip</label>
+						<input type="text" class = "form-control  " [(ngModel)] = "vol.addresss.zip" name="zip">
+					</div>	
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-xs-6">
+				<div class="form-group">
+					<label>Gender</label> <br><br>
+					<input type="radio" value = "Male" class = "" [(ngModel)] = "vol.gender" name="gender">&nbsp;Male
+					&nbsp;&nbsp;
+					<input type="radio" value= "Female" class = "" [(ngModel)] = "vol.gender" name="gender">&nbsp;Female
+					&nbsp;&nbsp;
+					<input type="radio" value= "Other" class = "" [(ngModel)] = "vol.gender" name="gender">&nbsp;Other
+				</div>	
+			</div>	
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6 col-xs-6">
+				<div class="form-group ">
+					<label>Email</label>
+					<input type="email" class = "form-control  " [(ngModel)] = "vol.email" name="email">
+				</div>	
+			</div>
+
+			<div class="col-sm-6 col-xs-6">
+				<div class="form-group">
+					<label>Telephone No.</label>
+					<input type="text" class = "form-control  " [(ngModel)] = "vol.telephone" name="telephone">
+				</div>	
+			</div>	
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6 col-xs-6">
+				<div class="form-group ">
+					<label>Skills</label>
+					<div class="row" *ngFor="let skill of vol.skills">
+						<div class="col-sm-12 col-xs-12">
+							<input type="checkbox" class = "form-control" [(ngModel)] = "skill.selected" name="skill"> 
+							&nbsp;&nbsp;
+							{{skill.name}} 
+						</div>
+					</div>
+				</div>	
+			</div>
+
+			<div class="col-sm-6 col-xs-6">
+				<div class="form-group">
+					<label>Comments and other relevant experiences</label>
+					<textarea class = "form-control  " [(ngModel)] = "vol.experience" name="experience">
+
+					</textarea> 
+				</div>	
+			</div>	
+		</div>
+
+		<div class="row text-center">
+			<button type="button" class="btn btn-success" (click) = "addVolunter()">
+				Submit
+			</button>
+		</div>
+
+		
+	</form>
+</div>
