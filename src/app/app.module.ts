@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 //import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 //Service
@@ -50,6 +53,9 @@ export const ROUTES: Routes = [
     FormsModule,
     HttpModule,
     AlertModule.forRoot(),
+    ModalModule.forRoot(),
+    CollapseModule.forRoot(),
+    CarouselModule.forRoot(),
     RouterModule.forRoot(ROUTES)
   ],
   providers: [DataService],

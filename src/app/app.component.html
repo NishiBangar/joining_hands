@@ -9,7 +9,7 @@
           </button>
           <a class="navbar-brand" routerLink="/">Joining Hands</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse"> <!-- [ngbCollapse] = "isCollapsed" -->
+        <div [collapse] = "isCollapsed" class="collapse navbar-collapse"> <!-- [ngbCollapse] = "isCollapsed" -->
           <ul class="nav navbar-nav navbar-right">
             <li><a routerLink = "/">Home</a></li>
             <li><a routerLink = "/contact">Contact</a></li>
