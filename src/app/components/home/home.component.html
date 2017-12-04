@@ -23,35 +23,39 @@
 				<div class="row">
 					<div class="form-group col-sm-12 col-xs-12 ">
 						<label>Country</label>
-						<input type="text" class = "form-control  " [(ngModel)] = "vol.addresss.country" name="country">
+						<input type="text" class = "form-control  " [(ngModel)] = "vol.address.country" name="country">
 					</div>	
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-12 col-xs-12 ">
 						<label>State</label>
-						<input type="text" class = "form-control  " [(ngModel)] = "vol.addresss.state" name="state">
+						<input type="text" class = "form-control  " [(ngModel)] = "vol.address.state" name="state">
 					</div>	
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-7 col-xs-7">
 						<label>City</label>
-						<input type="text" class = "form-control  " [(ngModel)] = "vol.addresss.city" name="city">
+						<input type="text" class = "form-control  " [(ngModel)] = "vol.address.city" name="city">
 					</div>	
 					<div class="form-group col-sm-5 col-xs-5">
 						<label>Zip</label>
-						<input type="text" class = "form-control  " [(ngModel)] = "vol.addresss.zip" name="zip">
+						<input type="text" class = "form-control  " [(ngModel)] = "vol.address.zip" name="zip">
 					</div>	
 				</div>
 			</div>
 
-			<div class="col-sm-6 col-xs-6">
-				<div class="form-group">
+			<div class="col-sm-6 col-xs-6 ">
+				<div class="form-group ">
 					<label>Gender</label> <br><br>
-					<input type="radio" value = "Male" class = "" [(ngModel)] = "vol.gender" name="gender">&nbsp;Male
-					&nbsp;&nbsp;
-					<input type="radio" value= "Female" class = "" [(ngModel)] = "vol.gender" name="gender">&nbsp;Female
-					&nbsp;&nbsp;
-					<input type="radio" value= "Other" class = "" [(ngModel)] = "vol.gender" name="gender">&nbsp;Other
+					<label class="radio-inline">
+						<input type="radio" value = "male" class = "" [(ngModel)] = "vol.gender" name="gender"> Male
+					</label>
+					<label class="radio-inline">
+						<input type="radio" value = "female" class = "" [(ngModel)] = "vol.gender" name="gender"> Female
+					</label>
+					<label class="radio-inline">
+						<input type="radio" value = "other" class = "" [(ngModel)] = "vol.gender" name="gender"> Other
+					</label>					
 				</div>	
 			</div>	
 		</div>
@@ -74,14 +78,17 @@
 
 		<div class="row">
 			<div class="col-sm-6 col-xs-6">
-				<div class="form-group ">
+				<div class="form-group  ">
 					<label>Skills</label>
-					<div class="row" *ngFor="let skill of vol.skills">
-						<div class="col-sm-12 col-xs-12">
-							<input type="checkbox" class = "form-control" [(ngModel)] = "skill.selected" name="skill"> 
-							&nbsp;&nbsp;
-							{{skill.name}} 
-						</div>
+					<div class="row  " *ngFor="let skill of vol.skills">
+						 
+							<label class="control-label checkbox-inline" style = "margin-left: 16px;">
+								<input type="checkbox" class = "" [(ngModel)] = "skill.selected" name="skill"> 
+								&nbsp;&nbsp;
+								{{skill.name}}
+							</label>
+							 
+						 
 					</div>
 				</div>	
 			</div>
@@ -89,7 +96,7 @@
 			<div class="col-sm-6 col-xs-6">
 				<div class="form-group">
 					<label>Comments and other relevant experiences</label>
-					<textarea class = "form-control  " [(ngModel)] = "vol.experience" name="experience">
+					<textarea class = "form-control no-resize " rows="9" [(ngModel)] = "vol.experience" name="experience">
 
 					</textarea> 
 				</div>	
@@ -97,7 +104,7 @@
 		</div>
 
 		<div class="row text-center">
-			<button type="button" class="btn btn-success" (click) = "addVolunter()">
+			<button type="button" class="btn btn-success" (click) = "addVolunteer(vol)">
 				Submit
 			</button>
 		</div>

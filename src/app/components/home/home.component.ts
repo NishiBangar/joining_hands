@@ -12,57 +12,66 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	this.vol.firstName = "";
-  	this.vol.lastName = "";
-  	this.vol.address.country = "";
-  	this.vol.address.state = "";
-  	this.vol.address.city = "";
-  	this.vol.address.zip = 0;
-  	this.vol.gender = "";
-  	this.vol.email = "";
-  	this.vol.telephone = "";
-  	this.vol.experience = "";
-  	this.vol.skills = [
-  		{
-  			name : 'Certified Plumber',
-  			selected : false
+  	console.log("Home component's ngOnInit()");
+
+  	this.vol = {
+  		firstName : "",
+  		lastName : "",
+  		address : {
+  			country : "",
+  			state : "",
+  			city : "",
+  			zip : ""
   		},
-  		{
-  			name : 'Carpentry Experience',
-  			selected : false
-  		},
-  		{
-  			name : 'Certified Electircian',
-  			selected : false
-  		}
-  		{
-  			name : 'Bartender Experience',
-  			selected : false
-  		}
-  		{
-  			name : 'Food and Hygiene Certificate',
-  			selected : false
-  		}
-  		{
-  			name : 'First Aid Course',
-  			selected : false
-  		},
-  		{
-  			name : 'Fork List Drive Certificate',
-  			selected : false
-  		},
-  		{
-  			name : 'Driver\'s Licence (Type B)',
-  			selected : false
-  		}
-  	];
+  		gender : "",
+  		email : "",
+  		telephone : "",
+  		experience : "",
+  		skills : [
+	  		{
+	  			name : 'Certified Plumber',
+	  			selected : false
+	  		},
+	  		{
+	  			name : 'Carpentry Experience',
+	  			selected : false
+	  		},
+	  		{
+	  			name : 'Certified Electircian',
+	  			selected : false
+	  		},
+	  		{
+	  			name : 'Bartender Experience',
+	  			selected : false
+	  		},
+	  		{
+	  			name : 'Food and Hygiene Certificate',
+	  			selected : false
+	  		},
+	  		{
+	  			name : 'First Aid Course',
+	  			selected : false
+	  		},
+	  		{
+	  			name : 'Fork List Drive Certificate',
+	  			selected : false
+	  		},
+	  		{
+	  			name : 'Driver\'s Licence (Type B)',
+	  			selected : false
+	  		}
+  		]
+  	};
+
+  	console.log("Volunteer values");
+  	console.log(this.vol);
 
   }
 
   // addVolunter()
-  addVolunter(){
+  addVolunteer(volunteer: Volunteer){
   	console.log("Volunteer  :  ");
-  	console.log(this.vol);
+  	console.log(volunteer);
   }
 }
 
