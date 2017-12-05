@@ -2,3 +2,99 @@
 	resize: none;
 	overflow-y: auto;
 }
+ 
+
+body{
+  margin:0;
+}
+
+ .carousel.slide {
+  .carousel-item {
+    position: relative;
+    min-height: 127px;
+    max-height: 0vm;
+    @media (max-width: 576px) {
+      height: 127px;
+    }
+    @media (min-width: 576px) {
+      height: 227px;
+    }
+    .item {
+      width: 100%;
+      height: 0vm;
+      position: absolute;
+      .image {
+        width: 100%;
+        height: 0%;
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
+
+.videoContainer {
+  width: 100vw; /*now it is 100% of viewport (window) width.*/
+  height: 54vm;
+  display: inline-block;
+  position: relative;
+}
+
+.videoContainer::after {
+  padding-top: 56.25%; /* 16:9 ratio - divide height by width and multiply by 100 */
+  display: block;
+  content: '';
+}
+
+.videoContainer>iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+/* Parallax configuration*/
+.bgimg-1 {
+    background-image: url('../../../assets/images/tomorrowland-2013-aftermovie.jpg');
+
+    min-height: 100%;
+    width: 100%;
+    height: 500px;
+}
+/*.bgimg-1 {
+    background-image: url(img_parallax.jpg);
+    min-height: 100%;
+}
+.bgimg-1 {
+    background-image: url(img_parallax.jpg);
+    min-height: 100%;
+}*/
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+  }
