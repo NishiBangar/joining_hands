@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   			country : "",
   			state : "",
   			city : "",
-  			zip : ""
+  			zip : 0
   		},
   		gender : "",
   		email : "",
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   		experience : "",
   		skills : [
 	  		{
-	  			name : 'Certified Plumber',
+	  			name : 'Certified Plumber',	
 	  			selected : false
 	  		},
 	  		{
