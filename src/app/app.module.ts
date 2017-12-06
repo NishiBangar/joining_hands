@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { VolunteersComponent } from './components/volunteers/volunteers.component';
 
 
 
@@ -35,6 +36,11 @@ export const ROUTES: Routes = [
     pathMatch : 'full'
   },
   {
+    path : 'volunteers',
+    component : VolunteersComponent,
+    pathMatch : 'full'
+  },
+  {
     path : 'contact',  
     component : ContactComponent,
     pathMatch : 'full'
@@ -46,7 +52,8 @@ export const ROUTES: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    VolunteersComponent
   ],
   imports: [
     BrowserModule,

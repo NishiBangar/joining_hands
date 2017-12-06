@@ -1,4 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
+import { DataService } from '../../services/data.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -26,12 +27,14 @@ export class HomeComponent implements OnInit {
   //***********************************************
 
   bgImage : any;
-  constructor(private modalService: BsModalService, private sanitizer : DomSanitizer) { }
+  constructor(private modalService: BsModalService, private sanitizer : DomSanitizer,
+              private dataService : DataService) { }
 
   ngOnInit() {
   	console.log("Home component's ngOnInit()");
+     
 
-    this.bgImage = '../../../assets/images/tomorrowland-2013-aftermovie.jpg';
+    //this.bgImage = '../../../assets/images/tomorrowland-2013-aftermovie.jpg';
 
     //*********** Youtube video embed **************
       this.videoUrl = "https://www.youtube.com/embed/caYdSWljo1g?autoplay=1&loop=1&playlist=caYdSWljo1g&amp;showinfo=0";
@@ -169,8 +172,15 @@ export class HomeComponent implements OnInit {
 
   // addVolunter()
   addVolunteer(volunteer: Volunteer){
-  	console.log("Volunteer  :  ");
+    console.log("*************************************************************");
+  	console.log("******************** Volunteer to Add ***********************  :  ");
+    console.log("*************************************************************");
   	console.log(volunteer);
+    console.log("*************************************************************");
+    console.log("*************************************************************");
+
+    // Add Volunteer to Service
+    this.dataService.addVolunteerToList(volunteer);
   }
 
   // ********** Modal ************
