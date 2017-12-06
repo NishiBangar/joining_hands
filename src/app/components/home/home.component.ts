@@ -118,8 +118,6 @@ export class HomeComponent implements OnInit {
   		 	text : "Festival goers are gathering at Miami\'s Sun Life Stadium for the Life In Color festival",
   		 	image : "assets/images/ReliveUltraMiami1.jpg"
   		 },
-  		
-  		
   		 {
 
   		 	title : "The Revival",
@@ -131,12 +129,6 @@ export class HomeComponent implements OnInit {
   		 	title : "UNITED WE DANCE",
   		 	text : "The festival movement where you lose yourself",
   		 	image : "assets/images/12779267_10153457458222078_8158487091733287629_o.jpg"
-  		 },
-  		 {
-
-  		 	title : "Event of Electronics",
-  			text : "Withness the premier event of electronics",
-  		 	image : "assets/images/miami-aftermovie-2017-thumb.jpg"
   		 },
   		 {
 
@@ -162,12 +154,7 @@ export class HomeComponent implements OnInit {
   		 	text : " Join us on our journey as we relive the unforgettable weekend that was Ultra Music Festival ",
   		 	image : "assets/images/Screen-Shot-2016-05-04-at-1.38.59-AM.png"
   		 },
-  		
-
   	];
-
-  	 
-
   }
 
   // addVolunter()
@@ -200,9 +187,6 @@ export class HomeComponent implements OnInit {
     this.message = 'Declined!';
     this.modalRef.hide();
   }
-
-
-
 }
 
 

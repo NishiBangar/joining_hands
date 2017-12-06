@@ -1,12 +1,12 @@
-<div class="panel panel-default" ng-init="getBooks()">
+<div class="panel panel-default col-sm-12 col-xs-12">
     <div class="panel-heading">
         <h3 class="panel-title text-center no-volunteer">Our Volunteers</h3>
     </div>
     <div class="panel-body">
     	<div class="row" *ngIf = "volunteerList.length == 0">
     		<div class="col-sm-12 col-xs-12 bg-danger text-center " >
-    			<h3 class="no-volunteer" style="font-weight: normal"> 
-    			No Volunteers Are Registered Yet. Add Volunteers from  the "HOME" Page</h3>
+    			<h5 class="no-volunteer" style="font-weight: normal;font-size: medium;"> 
+    			No Volunteers Are Registered Yet. Add Volunteers from  the "HOME" Page</h5>
     		</div>
     	</div>
 	    <div class="row" *ngIf = "volunteerList">
@@ -14,11 +14,14 @@
 	    		<div class="col-sm-2 col-xs-2">
 	    			<div class="thumbnail">
 				      <img [src]="noImageUrl" class="img-thumbnail" alt="No Image">
-				      <div class="caption">
-				        <h4>{{volunteer.firstName}}&nbsp;{{volunteer.lastName}}</h4>
+				      <div class="row">
+				      	<div class=" col-sm-12 col-xs-12">
+				        <h5 style="font-weight: bold;">{{volunteer.firstName}}&nbsp;{{volunteer.lastName}}</h5>
 				        <!-- <p>...</p> -->
 				        
 				      </div>
+				      </div>
+				      
 				    </div>
 	    		</div>
 	    	</div>
