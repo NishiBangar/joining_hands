@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 //import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
@@ -9,6 +9,12 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
+
+// Material Design components
+//import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+//import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+//import { MatInputModule, MatButtonModule } from '@angular/material';
+import 'hammerjs';
 
 //Service
 import { DataService } from './services/data.service';
@@ -56,9 +62,9 @@ export const ROUTES: Routes = [
     VolunteersComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     FormsModule,
-    HttpModule,
+    HttpModule, 
     AlertModule.forRoot(),
     ModalModule.forRoot(),
     CollapseModule.forRoot(),
