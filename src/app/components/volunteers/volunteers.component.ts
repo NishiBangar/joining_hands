@@ -16,8 +16,6 @@ export class VolunteersComponent implements OnInit {
   		this.noImageUrl = '../../../assets/images/No_Image_Available.jpg';
   		// Get all the Volunteer list on load
   		this.volunteerList = this.dataService.getVolunteerList();
-  		console.log("Volunter List ");
-  		console.log(this.volunteerList);
   	}
 
 }

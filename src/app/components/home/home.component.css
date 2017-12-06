@@ -11,6 +11,20 @@ body{
   margin-right: -15px
 }
 
+/* Error Validation */
+.error-div{
+  padding: 0px !important;
+  text-align: center !important;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+/* End of Error Validation */
+
  .carousel.slide {
   .carousel-item {
     position: relative;

@@ -3,6 +3,7 @@ import { DataService } from '../../services/data.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
  
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
 
 	vol : Volunteer;
+  tempVol : Volunteer;
 	//************ Carousel Slides ***************
 	carouselSlides : any[];
 	myInterval : number;
@@ -31,17 +33,11 @@ export class HomeComponent implements OnInit {
               private dataService : DataService) { }
 
   ngOnInit() {
-  	console.log("Home component's ngOnInit()");
-     
-
-    //this.bgImage = '../../../assets/images/tomorrowland-2013-aftermovie.jpg';
-
     //*********** Youtube video embed **************
       this.videoUrl = "https://www.youtube.com/embed/caYdSWljo1g?autoplay=1&loop=1&playlist=caYdSWljo1g&amp;showinfo=0";
       this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrl);
 
     //**********************************************
-
 
   	// Volunteer Data
   	this.vol = {
@@ -95,9 +91,8 @@ export class HomeComponent implements OnInit {
 
   	// Carousel Slide Details
   	this.myInterval = 4000;
-	this.noWrapSlides = false;
-	//this.activeSlide : 1;
-	this.noPauseSlides = true;
+	  this.noWrapSlides = false;
+	  this.noPauseSlides = true;
   	
   	this.carouselSlides = [
   		{
@@ -157,17 +152,40 @@ export class HomeComponent implements OnInit {
   	];
   }
 
-  // addVolunter()
-  addVolunteer(volunteer: Volunteer){
-    console.log("*************************************************************");
-  	console.log("******************** Volunteer to Add ***********************  :  ");
-    console.log("*************************************************************");
-  	console.log(volunteer);
-    console.log("*************************************************************");
-    console.log("*************************************************************");
+  // addVolunteer validation
+  addVoluteerValidation(){
+    let count:number = 0;
+    for(let i=0;i<this.vol.skills.length; i++){
+      let item = this.vol.skills[i];
+      if(item.selected == true){
+        ++count; /* Atleast 1 skill selected */
+        break;
+      }
+    }
 
-    // Add Volunteer to Service
-    this.dataService.addVolunteerToList(volunteer);
+    if(count){
+       return false;
+      }
+      else{
+        return true;
+      }
+  }
+  // addVolunter()
+  addVolunteer(volunteer: Volunteer ){
+    this.tempVol = JSON.parse(JSON.stringify( volunteer ));;
+
+    console.log("**************************************************************************************");
+  	console.log("******* Volunteer to Add - ( check 'Volunteer' tab for an entry )********************* ");
+    console.log("**************************************************************************************");
+  	console.log(this.tempVol);
+    console.log("**************************************************************************************");
+    console.log("**************************************************************************************");
+
+    // Add Volunteer to Service (DataService)
+    this.dataService.addVolunteerToList(this.tempVol);
+
+    this.openModalWithComponent();
+
   }
 
   // ********** Modal ************
@@ -187,6 +205,18 @@ export class HomeComponent implements OnInit {
     this.message = 'Declined!';
     this.modalRef.hide();
   }
+
+  openModalWithComponent() {
+    const list = [
+      'Volunteer Added Successfully!'
+    ];
+    this.modalRef = this.modalService.show(ModalContentComponent);
+    this.modalRef.content.title = 'Notification...';
+    this.modalRef.content.list = list;
+    /*setTimeout(() => {
+      list.push('PROFIT!!!');
+    }, 2000);*/
+  }
 }
 
 
@@ -205,4 +235,29 @@ interface Volunteer{
 	skills : any[],
 	experience : string
 
+}
+
+/* This is a component which we pass in modal*/
+ 
+@Component({
+  selector: 'modal-content',
+  template: `
+    <div class="modal-header" style = "background-color : beige;">
+      <h4 class="modal-title pull-left" >{{title}}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      {{list}}
+    </div>
+    <div class="modal-footer text-center">
+      <button type="button" class="btn btn-danger" (click)="bsModalRef.hide()">Close</button>
+    </div>
+  `
+})
+export class ModalContentComponent {
+  title: string;
+  list: any[] = [];
+  constructor(public bsModalRef: BsModalRef) {}
 }

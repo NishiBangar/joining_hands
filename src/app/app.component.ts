@@ -11,10 +11,10 @@ export class AppComponent {
   public isCollapsed = true;
 
   constructor(private router : Router){
-  	console.log("Main Contructor working");
+  	
   }
 
   ngOnInit(){
-  	console.log("ngOnInit working");
+  	
   }
 }

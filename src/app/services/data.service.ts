@@ -10,17 +10,14 @@ export class DataService {
 
   // Get all the Volunteer list
   getVolunteerList(){
-  	console.log("Inside Get Volunteer list");
   	return this.volunteerList;
   }
 
   // Add Volunteer to the list
   addVolunteerToList(volunter){
-  	console.log("Inside Add Volunteer service");
   	
   	this.volunteerList.push(volunter);
 
-  	console.log(this.volunteerList);
   }
 }
 

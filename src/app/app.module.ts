@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 //import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
@@ -22,6 +22,8 @@ import { DataService } from './services/data.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { ModalContentComponent } from './components/home/home.component';
+
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { VolunteersComponent } from './components/volunteers/volunteers.component';
@@ -57,10 +59,14 @@ export const ROUTES: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
+    ModalContentComponent,
     AboutComponent,
     ContactComponent,
     VolunteersComponent
   ],
+  entryComponents: [
+    HomeComponent,
+    ModalContentComponent],
   imports: [
     BrowserModule, 
     FormsModule,
