@@ -6,6 +6,9 @@
 
 body{
   margin:0;
+  background-color: #222222;
+  margin-left: -15px;
+  margin-right: -15px
 }
 
  .carousel.slide {
@@ -57,6 +60,9 @@ body{
   left:0;
 }
 
+.panel-form{
+  padding: 20px;
+}
 /* Parallax configuration*/
 .bgimg-1 {
     background-image: url('../../../assets/images/tomorrowland-2013-aftermovie.jpg');
@@ -65,14 +71,19 @@ body{
     width: 100%;
     height: 500px;
 }
-/*.bgimg-1 {
-    background-image: url(img_parallax.jpg);
+.bgimg-2 {
+    background-image: url('../../../assets/images/Screen-Shot-2016-05-04-at-1.38.59-AM.png');
     min-height: 100%;
+    width: 100%;
+    height: 500px;
 }
-.bgimg-1 {
-    background-image: url(img_parallax.jpg);
+.bgimg-3 {
+    background-image: url('../../../assets/images/miami-aftermovie-2017-thumb.jpg');
     min-height: 100%;
-}*/
+    width: 100%;
+    height: 500px;
+}
+
 .bgimg-1, .bgimg-2, .bgimg-3 {
     position: relative;
     opacity: 0.65;
@@ -83,7 +94,7 @@ body{
 }
 
 .caption {
-    position: absolute;
+    position: relative;
     left: 0;
     top: 50%;
     width: 100%;
@@ -92,9 +103,9 @@ body{
 }
 
 .caption span.border {
-    background-color: #111;
+    background-color: #569e57d6;
     color: #fff;
-    padding: 18px;
+    padding: 10px;
     font-size: 25px;
     letter-spacing: 10px;
   }

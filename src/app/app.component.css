@@ -1,0 +1,20 @@
+body{
+  background-color: #222222;
+}
+
+.navbar-inverse {
+    background-color: #000;
+}
+
+.navbar-brand{
+	font-size: 20px; 
+    letter-spacing: 3px;
+    color: #3c763dde;
+    font-weight: bold;
+}
+
+.bottom-nav{
+    text-align: center;
+    background-color:black;
+    padding:10px;
+}
