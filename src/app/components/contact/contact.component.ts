@@ -14,9 +14,12 @@ export class ContactComponent implements OnInit {
   constructor() { }
  
   ngOnInit() {
-  	this.noImageUrl = '../../../assets/images/No_Image_Available.jpg';
-  	this.image = "../../../assets/images/nishi_new.jpg";
-    this.bgImage = "../../../assets/images/white-background-with-colorful-confetti_1017-3061.jpg";
+    // this.noImageUrl = '../../../assets/images/No_Image_Available.jpg';
+  	this.noImageUrl = 'assets/images/No-Image-Available.jpg';
+    // this.image = '../../../assets/images/NishiNew.jpg';
+  	this.image = "assets/images/NishiNew.jpg";
+    // this.bgImage = '../../../assets/images/Whitebackgroundwithcolorfulconfetti10173061.jpg';
+    //this.bgImage = "assets/images/Whitebackgroundwithcolorfulconfetti10173061.jpg";
   	 
   }
   	

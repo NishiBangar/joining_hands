@@ -13,7 +13,8 @@ export class VolunteersComponent implements OnInit {
   	constructor(private dataService : DataService) { }
 
   	ngOnInit() {
-  		this.noImageUrl = '../../../assets/images/No_Image_Available.jpg';
+  		// this.noImageUrl = '../../../assets/images/No_Image_Available.jpg';
+  		this.noImageUrl = 'assets/images/No_Image_Available.jpg';
   		// Get all the Volunteer list on load
   		this.volunteerList = this.dataService.getVolunteerList();
   	}
