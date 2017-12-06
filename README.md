@@ -1,4 +1,5 @@
-# [JOINING HANDS] (https://nishibangar.github.io/joining_hands/) - A website where people can volunteer to work at an event. https://nishibangar.github.io/joining_hands/
+# [JOINING HANDS](https://nishibangar.github.io/joining_hands/) 
+- A website where people can volunteer to work at an event. https://nishibangar.github.io/joining_hands/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
 
